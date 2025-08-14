@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def canUnlockAll(boxes):
+    """
+    canUnlockAll add boxes
+    """
     n = len(boxes)
     unlocked_boxes = {0}
     keys_to_check = list(boxes[0])
