@@ -1,17 +1,15 @@
 #!/usr/bin/python3
+"""Prototype: def canUnlockAll(boxes)"""
+
+
 def canUnlockAll(boxes):
-    """
-    canUnlockAll add boxes
-    """
-    n = len(boxes)
-    unlocked_boxes = {0}
-    keys_to_check = list(boxes[0])
-
-    while keys_to_check:
-        key = keys_to_check.pop(0)
-
-        if 0 <= key < n and key not in unlocked_boxes:
-            unlocked_boxes.add(key)
-            keys_to_check.extend(boxes[key])
-
-    return len(unlocked_boxes) == n
+    """Return code"""
+    length = len(boxes)
+    for i in range(1, length):
+        flag = 0
+        for j in range(length):
+            if i in boxes[j] and i != j:
+                flag = 1
+        if flag == 0:
+            return False
+    return True
